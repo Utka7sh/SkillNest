@@ -1,102 +1,74 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
-
-<!DOCTYPE html>
+<%@ taglib prefix="ab" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home - SkillNest</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- Custom CSS for the theme -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/style3.css">
 
-<title>WinWay Job Portal</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="./style.css">
-<link rel="stylesheet" type="text/css" href="./style1.css">
-<style>
-h2 {
-	font-size: 16px;
-	margin-bottom: 5px;
-}
-
-p {
-	font-size: 12px;
-	margin: 0;
-}
-
- .bg-clr{
-        background-color:#f1faee;
-        }
- 
-        
-</style>
 </head>
 <body>
+<section>
 
+	<ab:forEach var="i" begin="1" end="260">
+		<span class="sp"></span>
+	</ab:forEach>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-clr">
-		<div class="container">
-			<a class="navbar-brand fs-1 fw-medium " href="#">WinWay Job
-				Portal</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ms-auto">
-					<li class="nav-item"><a class="nav-link" href="home">Home</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="viewalljobs">All
-							Jobs</a></li>
-
-					<li class="nav-item"><a class="nav-link"
-						href="https://www.instagram.com/1_utkarsh_1/">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
+	<!-- Navbar -->
+			<nav class="navbar navbar-expand-lg">
+				<a class="navbar-brand" href="/">SkillNest</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+						aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/login">Login</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/signup">Sign Up</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/viewalljobs">Jobs</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/addjob">Add Job</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/internships">Internships</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+</section>
+	<!-- Content -->
+<section id="abc">
 	<div class="container mt-5">
 		<div class="row">
-			<!-- Card 1 -->
-			<div class="col-md-6 mb-5">
-				<div class="card bg-warning">
-					<div class="card-body text-center">
-						<h5 class="card-title">View AllJobs</h5>
-						<form action="viewalljobs" method="get">
-							<button type="submit" class="btn btn-primary">Submit</button>
-						</form>
+			<ab:forEach var="job" items="${jobPosts}">
+				<div class="col-md-4 col-sm-6 mb-4"> <!-- Changed grid columns for responsiveness -->
+					<div class="card">
+						<div class="card-body">
+							<h3 class="card-title">${job.postProfile}</h3>
+							<p class="card-text">${job.postId}</p>
+							<p class="card-text">${job.postDesc}</p>
+							<p class="card-text">${job.reqExperience}</p>
+							<a href="apply" class="btn btn-primary">Apply Now</a>
+						</div>
 					</div>
 				</div>
-			</div>
-
-			<!-- Card 2 -->
-			<div class="col-md-6 mb-5">
-				<div class="card">
-					<div class="card-body text-center">
-						<h5 class="card-title">Add Job</h5>
-						<form action="addjob" method="get">
-
-							<button type="submit" class="btn btn-primary">Submit</button>
-						</form>
-
-					</div>
-				</div>
-			</div>
-			
-				
+			</ab:forEach>
 		</div>
 	</div>
-
-
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-		crossorigin="anonymous"></script>
+</section>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

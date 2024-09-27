@@ -12,6 +12,8 @@ import com.example.Utk.repo.JobRepo;
 public class JobService {
     @Autowired
     public JobRepo repo;
+    @Autowired
+    private JobPost jobPost;
 
     //method to return all JobPosts
     public List<JobPost> getAllJobs() {
@@ -50,6 +52,7 @@ public class JobService {
     //method to return all JobPosts
     public List<JobPost> returnAllJobPosts() {
         System.out.println(repo.findAll());
+        System.out.println("JobPosts: " + jobPost);
         return repo.findAll();
 
     }

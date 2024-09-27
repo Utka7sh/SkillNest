@@ -23,10 +23,17 @@ public class JobController {
     // ************************************************************************
 
     @RequestMapping({"/", "/home"})
-    public String home() {
+    public String home(Model model) {
+        List<JobPost> jobPosts = service.returnAllJobPosts();
+        model.addAttribute("jobPosts", jobPosts);
         return "home"; // Maps to /WEB-INF/views/home.jsp
     }
-
+    @GetMapping("/home")
+    public String getHome(Model model) {
+        List<JobPost> jobPosts = service.returnAllJobPosts();
+        model.addAttribute("jobPosts", jobPosts);
+        return "home";
+    }
     // ************************************************************************
 
     @RequestMapping("/apply")

@@ -9,13 +9,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>WinWay Job Portal</title>
+	<title>SkillNest</title>
 	<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 		rel="stylesheet"
 		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 		crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link rel="stylesheet" type="text/css" href="style3.css">
 	<link rel="stylesheet" type="text/css" href="./style1.css">
 	<style>
 	h2 {
@@ -34,8 +34,7 @@
 	
 		<nav class="navbar navbar-expand-lg navbar-light bg-warning">
 			<div class="container">
-				<a class="navbar-brand fs-1 fw-medium" href="#">WinWay Job
-					Portal</a>
+				<a class="navbar-brand fs-1 fw-medium" href="#">SkillNest</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarNav"
 					aria-controls="navbarNav" aria-expanded="false"
@@ -61,6 +60,7 @@
 						<div class="card-body">
 							<h2 class="mb-3 text-center fs-3 font-weight-bold">Post a new
 								Job</h2>
+							<%--@elvariable id="jobPost" type=""--%>
 							<form:form action="handleForm" method="post" modelAttribute="jobPost">
 								<div class="mb-1">
 									<label for="postId" class="form-label">Post ID</label> <input
