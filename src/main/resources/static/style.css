@@ -1,0 +1,171 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    /*overflow: hidden;*/
+}
+
+body {
+    min-height: 100vh;
+    background: #000000;
+    overflow: hidden;
+}
+
+/* Fix the section layout */
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    flex-wrap: wrap;
+    position: absolute; /* Set position to relative to control positioning */
+}
+
+/* Background animation */
+section:not(.abc)::before {
+    z-index: 0; /* Ensure the background is under the content */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#000, #1b0095, #000000);
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.sp {
+    position: relative;
+    display: block;
+    width: calc(6.25vw - 2px);
+    height: calc(6.25vw - 2px);
+    background: #181818;
+    transition: 1.5s;
+}
+
+.sp:hover {
+    background: #000dff;
+    transition: 0s;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1005; /* Ensures navbar is on top */
+    background-color: #24242e;
+    padding: 10px;
+    border-bottom: 1px solid #00599a;
+}
+
+/* Style the job cards */
+section.abc {
+    flex-direction: column;
+    color: #98aaff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 4px;
+    z-index: 1000;
+    margin-bottom: 20px; /* Add some space between cards */
+}
+.card {
+    position: relative;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+    z-index: 1;
+    margin-bottom: 20px; /* Add some space between cards */
+    background-color: #212223;
+    color: #1e96fc;
+}
+#l {
+    position: relative;
+    width: 400px;
+    display: contents;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+    z-index: 1007;
+    margin-bottom: 20px; /* Add some space between cards */
+    background-color: #212223;
+    color: #1e96fc;
+}
+
+section.abc .card h2 {
+    align-content: center;
+    align-items: center;
+    color: rgba(7, 77, 255, 0.97);
+    text-align: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    section span {
+        width: calc(10vw - 2px);
+        height: calc(10vw - 2px);
+    }
+}
+
+@media (max-width: 600px) {
+    section span {
+        width: calc(20vw - 2px);
+        height: calc(20vw - 2px);
+    }
+}
+/* For WebKit browsers (Chrome, Safari, Edge) */
+.bootstrap-select .dropdown-menu {
+    overflow-y: auto; /* Allow scrolling */
+    max-height: 200px; /* Adjust this to your needs */
+    background-color: #212223;
+}
+
+/* Hide scrollbar in WebKit browsers */
+.bootstrap-select .dropdown-menu::-webkit-scrollbar {
+    width: 0px; /* Hide scrollbar */
+}
+
+/* For Firefox */
+.bootstrap-select .dropdown-menu {
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+/* Style the individual dropdown items */
+.bootstrap-select .dropdown-menu .dropdown-item {
+    background-color: #212223;
+    color: #ffffff;
+}
+
+.bootstrap-select .dropdown-menu .dropdown-item:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Highlight the selected option */
+.bootstrap-select .dropdown-menu .active {
+    background-color: #1e96fc;
+    color: #ffffff;
+}
