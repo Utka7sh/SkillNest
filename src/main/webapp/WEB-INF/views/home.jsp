@@ -3,7 +3,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>Home - SkillNest</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -25,13 +26,13 @@
 					<ul class="navbar-nav ml-auto">
 
 						<li class="nav-item">
-							<a class="nav-link" href="/viewalljobs">Apply</a>
+							<a class="nav-link" href="/viewalljobs">Jobs</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/addjob">Hire</a>
+							<a class="nav-link" href="/sLogin">Apply</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/account">Account</a>
+							<a class="nav-link" href="/hLogin">Hire</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/contact">Contact</a>
@@ -39,9 +40,11 @@
 					</ul>
 				</div>
 			</nav>
+
 	<ab:forEach var="i" begin="1" end="200">
 		<span class="sp"></span>
 	</ab:forEach>
+
 </section>
 	<!-- Content -->
 <section class="abc mt-6">
@@ -52,9 +55,11 @@
 					<div class="card" style="width: auto; max-width: 100%;"> <!-- Adjust width based on content -->
 						<div class="card-body">
 							<h5 class="card-title" style="color: #8b3efd;">${job.postProfile}</h5>
-							<p class="card-text">Job ID: ${job.postId}</p>
-							<p class="card-text">What your Job will look like: ${job.postDesc}</p>
-							<p class="card-text">Experience Required: ${job.reqExperience}</p>
+
+							<p class="card-text"><u style="color: #4a3eea">Job ID:</u> ${job.postId}</p>
+							<p class="card-text"><u style="color: #4a3eea">Description:</u> ${job.postDesc}</p>
+							<p class="card-text"><u style="color: #4a3eea">Experience Required:</u> ${job.reqExperience}</p>
+
 							<a href="apply" class="btn btn-primary">Apply Now</a>
 						</div>
 					</div>

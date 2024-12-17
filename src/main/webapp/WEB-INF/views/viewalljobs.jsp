@@ -80,7 +80,7 @@
                                 </ab:forEach>
                             </ul>
                         </p>
-                        <form action="/apply" method="get">
+                        <form action="/slogin" method="get">
                           <!-- Your form fields go here if needed -->
                             <button type="apply" class="btn btn-primary">Apply</button>
                          </form>

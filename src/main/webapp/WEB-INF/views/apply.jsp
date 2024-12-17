@@ -4,18 +4,22 @@
 
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apply - SkillNest</title>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
     <!-- Custom CSS for the theme -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 
 
 </head>
 <body>
+
 <section>
 
     <!-- Navbar -->
@@ -43,10 +47,13 @@
             </ul>
         </div>
     </nav>
+
     <ab:forEach var="i" begin="1" end="200">
         <span class="sp"></span>
     </ab:forEach>
+
 </section>
+
 <!-- Content -->
 <section class="abc mt-6">
     <form:form action="applied" method="post" modelAttribute="Application">
@@ -86,7 +93,6 @@
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary">Apply</button>
         <div class="mb-2">
             <label for="skills" class="form-label">Tech Stack</label>
             <select class="form-control selectpicker" id="skills" name="skills" multiple data-live-search="true" required>
@@ -206,6 +212,8 @@
                 <option value="Game Development">Game Development</option>
             </select>
         </div>
+        <button type="submit" class="btn btn-primary">Apply</button>
+
     </form:form>
 </section>
 
@@ -223,5 +231,6 @@
         $('.selectpicker').selectpicker();
     });
 </script>
+
 </body>
 </html>

@@ -1,7 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="ab" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
 
 <!DOCTYPE html>
@@ -40,7 +39,7 @@
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="/login">Login</a>
+					<a class="nav-link" href="/sLogin">Apply</a>
 				</li>
 
 				<li class="nav-item">

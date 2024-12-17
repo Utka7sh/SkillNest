@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
-    /*overflow: hidden;*/
 }
 
 body {
@@ -14,7 +13,7 @@ body {
 }
 
 /* Fix the section layout */
-section {
+section{
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -54,7 +53,8 @@ section:not(.abc)::before {
     transition: 1.5s;
 }
 
-.sp:hover {
+section span:hover
+{
     background: #000dff;
     transition: 0s;
 }
@@ -89,7 +89,7 @@ section.abc {
     justify-content: center;
     align-items: center;
     padding: 40px;
-    border-radius: 4px;
+    border-radius: 60px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
     z-index: 1;
     margin-bottom: 20px; /* Add some space between cards */
@@ -168,4 +168,11 @@ section.abc .card h2 {
 .bootstrap-select .dropdown-menu .active {
     background-color: #1e96fc;
     color: #ffffff;
+}
+#thanks{
+    text-align: center;
+    margin-top: -382px;
+}
+#applied{
+    margin-top: 83px;
 }

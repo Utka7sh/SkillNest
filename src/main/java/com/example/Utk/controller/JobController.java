@@ -92,4 +92,17 @@ public class JobController {
         System.out.println("Job added: " + jobPost);
         return "success"; // Maps to /WEB-INF/views/success.jsp
     }
+
+    // ************************************************************************
+
+    @RequestMapping("/hLogin")
+    public String hLogin() {
+        return "hLogin";
+    }
+
+    @RequestMapping("/sLogin")
+    public String sLogin() {
+        return "sLogin";
+    }
+
 }
